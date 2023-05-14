@@ -10,6 +10,12 @@ public class Main {
             int val = r.nextInt(0, 1000000);
             hashTable.put(new TestingClass(val), "Student " + val);
         }
+        System.out.println(hashTable.get(1));
+        System.out.println(hashTable.get(2));
+        System.out.println(hashTable.get(3));
+        System.out.println(hashTable.get(4));
+        System.out.println(hashTable.get(5));
+        System.out.println(hashTable.get(6));
     }
 }
 

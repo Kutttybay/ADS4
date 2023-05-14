@@ -1,17 +1,26 @@
 import java.util.LinkedList;
 public class HashTable<K, V> {
     private LinkedList<HashNode<K, V>>[] chain;
-    private int M = 25;
+    private int M = 11;
     private int size;
+    /*
+    * конструктор создает хэш-таблицу со стандартным размером M и инициализирует пустой связанный список для каждого ячейки таблицы.
+    */
     public HashTable(){
         chain = new LinkedList[M];
         size = 0;
     }
+    /*
+    * конструктор создает хэш-таблицу с заданным размером M и инициализирует пустой связанный список для каждого ячейки таблицы.
+    */
     public HashTable(int m){
         this.M = m;
         chain = new LinkedList[M];
         size = 0;
     }
+    /*
+    * вычисления хэш-кода ключа "key"
+    */
     private int hash(K key){
         return key.hashCode() % M;
     }
