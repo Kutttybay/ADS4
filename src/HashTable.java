@@ -51,4 +51,14 @@ public class HashTable<K, V> {
         return null;
     }
 
+    public boolean contains(V value ){
+        for (LinkedList<HashNode<K,V>> list : chain){
+            for (HashNode<K,V> node: list){
+                if (node.getValue().equals(value)) return true;
+            }
+        }
+        return false;
+    }
+
+
 }
