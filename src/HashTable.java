@@ -60,5 +60,16 @@ public class HashTable<K, V> {
         return false;
     }
 
+    public K getKey(V value){
+        for (LinkedList<HashNode<K,V>> list : chain){
+            for (HashNode<K,V> node: list){
+                if (node.getValue().equals(value)) return node.getKey();
+            }
+        }
+        return null;
+    }
 
+    public int getSize(){
+        return size;
+    }
 }
