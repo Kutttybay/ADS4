@@ -7,5 +7,12 @@ public class HashTable<K, V> {
         chain = new LinkedList[M];
         size = 0;
     }
-
+    public HashTable(int m){
+        this.M = m;
+        chain = new LinkedList[M];
+        size = 0;
+    }
+    private int hash(K key){
+        return key.hashCode() % M;
+    }
 }
