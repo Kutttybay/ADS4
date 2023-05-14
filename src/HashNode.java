@@ -1,4 +1,7 @@
 public class HashNode<K, V> {
+
+    // Данный класс представляет собой узел хеш-таблицы
+    // Класс имеет два поля - key и value, конструктор, геттеры и сеттер для поля value, а также переопределенный метод toString
     private K key;
     private V value;
     public HashNode(K key, V value){
@@ -16,5 +19,10 @@ public class HashNode<K, V> {
 
     public void setValue(V value){
         this.value = value;
+    }
+
+    @Override
+    public String toString(){
+        return "{" + key + " " + value + "}";
     }
 }
