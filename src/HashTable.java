@@ -37,5 +37,17 @@ public class HashTable<K, V> {
         }
         return null;
     }
-
+    public V remove(K key){
+        int index = hash(key);
+        if (chain[index] == null) return null;
+        for (HashNode<K, V> node: chain[index]){
+            if (node.getKey().equals(key)){
+                chain[index].remove(node);
+                size--;
+                return node.getValue();
+            }
+        }
+        size--;
+        return null;
+    }
 }
