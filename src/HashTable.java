@@ -13,6 +13,7 @@ public class HashTable<K, V> {
 
     /*
     * Defence
+    *
     */
     public V replace(K key, V value, Object nValue){
         int index = hash(key);

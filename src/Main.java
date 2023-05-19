@@ -19,6 +19,7 @@ public class Main {
         System.out.println(hashTable.get(6));
         hashTable.contains(3);
         hashTable.remove(6);
+
     }
 }
 
