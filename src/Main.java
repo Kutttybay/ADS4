@@ -13,6 +13,7 @@ public class Main {
         System.out.println(hashTable.get(1));
         System.out.println(hashTable.get(2));
         System.out.println(hashTable.get(3));
+        hashTable.replace(3, 4, 132);
         System.out.println(hashTable.get(4));
         System.out.println(hashTable.get(5));
         System.out.println(hashTable.get(6));

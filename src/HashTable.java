@@ -10,6 +10,33 @@ public class HashTable<K, V> {
         chain = new LinkedList[M];
         size = 0;
     }
+
+    /*
+    * Defence
+    */
+    public V replace(K key, V value, Object nValue){
+        int index = hash(key);
+        if (chain[index] == null) {
+            return value;
+        }
+        for (HashNode<K,V> node: chain[index]){
+            if (node.getKey().equals(key)){
+                node.setValue(value);
+                put(key, value);
+            }
+        }
+        if (value == nValue){
+            return value;
+        }
+        for (HashNode<K,V> node: chain[index]){
+            if (node.getKey().equals(key)){
+                node.setValue((V) nValue);
+                value = (V) nValue;
+                return (V) nValue;
+            }
+        }
+        return value;
+    }
     /*
     * конструктор создает хэш-таблицу с заданным размером M и инициализирует пустой связанный список для каждого ячейки таблицы.
     */
